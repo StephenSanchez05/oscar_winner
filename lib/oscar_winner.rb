@@ -1,6 +1,22 @@
-require "oscar_winner/version"
+class OscarWinner
 
-module OscarWinner
-  class Error < StandardError; end
-  # Your code goes here...
+attr_accessor :category, :winner, :description 
+
+@@all = []
+ 
+  def initialize
+    @@all << self
+  end
+ 
+  def self.all
+    @@all
+  end
+ 
+  def self.reset_all
+    @@all.clear
+  end
+
+
+
 end
+
