@@ -33,7 +33,21 @@ class Scraper
       end
     end
   end
+  
+  def oscar_list
+    counter = 0
+    OscarWinner.all.each do |course|
+      if course.description && course.description != ""
+        counter += 1
+        puts ""
+        puts "#{counter}.  #{course.category}"
+      end
+    end
+  end
+  
+  def specific_oscar(id)
+    OscarWinner.all[id-1]
+  end
 end
   
 
-Scraper.new.print_oscar
