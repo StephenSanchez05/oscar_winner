@@ -40,10 +40,16 @@ class UI
     end
   end 
   
-  def selection
+ def selection
     puts ""
-    puts "Please enter the number of the category you would like to see"
-
+    puts "Please enter the number of the category you would like to see (1-24)"
+    input = gets.strip.to_i
+    if input.is_a?(Integer)
+    Scraper.new.specific_oscar(input)
+    else
+    selection
+    end
+  end
 end
     
 UI.new.start
