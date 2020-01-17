@@ -24,7 +24,6 @@ class Scraper
   end
        
   def print_oscar
-    self.get_oscar_winners
     OscarWinner.all.each do |course|
       if course.description && course.description != ""
         puts ""
